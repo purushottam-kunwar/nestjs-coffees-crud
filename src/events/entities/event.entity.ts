@@ -1,4 +1,4 @@
-import { Column, Entity, In, Index, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, Index, PrimaryGeneratedColumn } from 'typeorm';
 @Index(['name', 'type'])
 @Entity()
 export class Event {
@@ -12,6 +12,6 @@ export class Event {
   @Column()
   name: string;
 
-  @Column()
+  @Column('json')
   payLoad: Record<string, any>;
 }
